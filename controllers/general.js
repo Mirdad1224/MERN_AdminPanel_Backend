@@ -2,7 +2,7 @@ const User = require("../models/User");
 const OverallStat = require("../models/OverallStat");
 const Transaction = require("../models/Transaction");
 
-export const getUser = async (req, res) => {
+const getUser = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
@@ -15,9 +15,9 @@ export const getUser = async (req, res) => {
 const getDashboardStats = async (req, res) => {
   try {
     // hardcoded values
-    const currentMonth = "December";
-    const currentYear = 2022;
-    const currentDay = "2022-12-17";
+    const currentMonth = "November";
+    const currentYear = 2021;
+    const currentDay = "2021-12-17";
 
     /* Recent Transactions */
     const transactions = await Transaction.find()
